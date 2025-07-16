@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Moodify – Your Mood-Based Music Player</title>
+
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="Moodify logo">Moodify</div>
+    <nav role="navigation" aria-label="Primary Navigation">
+      <a href="#main" class="nav-link">Choose Mood</a>
+      <a href="#playlist" class="nav-link">Playlist</a>
+      <link rel="stylesheet" href="style.css">
+
+      <button id="show-favorites-btn" aria-label="Show Favorites" title="Show Favorites">⭐ Favorites</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="main" class="hero" role="region" aria-labelledby="hero-title">
+      <h1 id="hero-title">Your Mood, Your Music</h1>
+      <p>Discover the perfect playlist that suits your mood perfectly. Choose your mood or search your favorite songs.</p>
+      <button id="start-btn" aria-label="Start with Happy Mood">Get Started</button>
+    </section>
+
+    <section id="mood-selection" role="region" aria-label="Mood selection">
+      <div class="mood-select" role="list" aria-live="polite" aria-atomic="true" aria-relevant="all">
+        <button class="mood-btn" role="listitem" data-mood="happy" aria-pressed="false" aria-label="Happy mood">😊 Happy</button>
+        <button class="mood-btn" role="listitem" data-mood="sad" aria-pressed="false" aria-label="Sad mood">😢 Sad</button>
+        <button class="mood-btn" role="listitem" data-mood="energetic" aria-pressed="false" aria-label="Energetic mood">⚡ Energetic</button>
+        <button class="mood-btn" role="listitem" data-mood="calm" aria-pressed="false" aria-label="Calm mood">🌙 Calm</button>
+        <button class="mood-btn" role="listitem" data-mood="romantic" aria-pressed="false" aria-label="Romantic mood">❤️ Romantic</button>
+        <button class="mood-btn" role="listitem" data-mood="devotion" aria-pressed="false" aria-label="Devotion mood">🙏 Devotion</button>
+        <button class="mood-btn" role="listitem" data-mood="kids" aria-pressed="false" aria-label="Kids mood">🧸 Kids</button>
+      </div>
+    </section>
+
+    <section class="search-wrapper" role="region" aria-label="Search songs or artists">
+      <input type="search" id="search-input" placeholder="Search music or artists..." aria-describedby="search-desc" autocomplete="off" />
+      <div id="search-desc" class="sr-only">Type and press Enter to search for music tracks or artists.</div>
+    </section>
+
+    <section id="playlist" role="region" aria-live="polite" aria-busy="false" aria-label="Playlist"></section>
+
+    <section id="favorites-section" aria-label="Favorites" style="display:none;">
+      <h2>Favorites <button id="fav-close-btn" aria-label="Close Favorites" title="Close Favorites" style="cursor:pointer; background:none; border:none; font-size:1.5rem; color:var(--color-text-secondary); user-select:none;">&times;</button></h2>
+      <div id="fav-list" style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center;"></div>
+    </section>
+
+    <section class="info-section" aria-label="About Moodify">
+      <p><strong>Moodify</strong> uses the YouTube Data API to fetch music videos based on your mood or search queries. The theme colors change to match your mood for a personalized experience. You can 'like' songs and save favorites locally for quick access!</p>
+    </section>
+  </main>
+
+  <footer>
+    <center><p>&copy; 2025 Moodify &mdash; Powered by YouTube Data API</p></center>
+  </footer>
+
+    <script src="scripte.js"></script>
+
+  <style>
+    /* Screen reader only */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip-path: inset(100%);
+      white-space: nowrap;
+      border: 0;
+      padding: 0;
+      margin: -1px;
+    }
+  </style>
+</body>
